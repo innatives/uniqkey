@@ -9,40 +9,7 @@ $(document).ready(function () {
   });
 });
 
-// when the DOM is ready
-$(document).ready(function () {
-  // make an array of invalid domains
-  const invalidDomains = [
-    "gmail.com",
-    "yahoo.com",
-    "hotmail.com",
-    "competitor.com",
-  ];
 
-  // get the submit button
-  const submitBtn = $(".hack-button");
-  // on submit button click
-  submitBtn.click(() => {
-    // get the email field
-    const email = $(".email-input");
-    // split email at '@' character to get domain
-    const domainPart = email.val().split("@")[1];
-
-    // if the domain exists in the invalidDomains array
-    if (invalidDomains.indexOf(domainPart) !== -1) {
-      // clear email field
-      email.val("");
-      // add a 'use business mail' placeholder
-      email.attr("placeholder", "Please enter a business email");
-      // prevent form submission
-      return false;
-    } else {
-      // else if email is not invalid
-      // submit form
-      return true;
-    }
-  });
-});
 
 $(".products_link").on("mouseenter", function () {
   // Find the .btn_main_icon inside the hovered .products_link
